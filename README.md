@@ -7,7 +7,7 @@ You will write an server side Node.js application that will support:
   - Returning version identified in your package.json
 
 - WebSocket support for:
-  - Emitting device telemetry data to a client on an interval (see interval_data.js file attached)
+  - Emitting device telemetry data to a client on an interval
 
 
 You will write a simple client-side application **of your choice that will:**
