@@ -4,6 +4,7 @@ const
   app = express(),
   aedes = require( "aedes" ),
   httpPort = 8080,
+  wsPort = httpPort,
   ws = require( "websocket-stream" ),
   broker = ws.createServer({ server: app }, aedes.handle),
   devices = {}
