@@ -15,13 +15,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.listen( httpPort, () => {
-    // This line needs to be fixed
+    // TODO: This line needs to be fixed
     Object.keys(devices).forEach( (deviceKey)=> broker.publish( deviceKey, "on" ) )
 
     setInterval( () => {
-      // This line needs to be fixed
+      // TODO: This line needs to be fixed
       utils.getTelemetry()
-      // This line needs to be fixed
+      // TODO: This line needs to be fixed
       broker.publish();
     }, config.statusInterval );
   
