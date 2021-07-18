@@ -8,11 +8,16 @@ const
   wsPort = httpPort,
   ws = require( "websocket-stream" ),
   broker = ws.createServer({ server: app }, aedes.handle),
-  devices = {}
+  devices = {},
+  appRouter = require('./app/routes/app'),
+  devicesRouter = require('./app/routes/devices')
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use('/app', appRouter)
+app.use('/devices', devicesRouter)
 
 app.listen( httpPort, () => {
     // TODO: This line needs to be fixed

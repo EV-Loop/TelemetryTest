@@ -7,6 +7,10 @@ const config = {
   telemetryTopic:    "/telemetry"
 }
 const utils = {
+  getTelemetry: function () {
+    // TODO: implement me
+    return {}
+  },
   publishTelemetry: function ( broker, deviceId ) {
     broker.publish({
       topic: deviceId + config.telemetryTopic,
