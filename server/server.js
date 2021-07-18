@@ -3,12 +3,14 @@ const
   express = require( "express" ),
   app = express(),
   aedes = require( "aedes" ),
+  logger = require( "morgan" ),
   httpPort = 8080,
   wsPort = httpPort,
   ws = require( "websocket-stream" ),
   broker = ws.createServer({ server: app }, aedes.handle),
   devices = {}
 
+app.use(logger('dev'));
 
 app.listen( httpPort, () => {
     // This line needs to be fixed
