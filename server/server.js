@@ -22,7 +22,7 @@ app.listen( httpPort, () => {
       // TODO: This line needs to be fixed
       utils.getTelemetry()
       // TODO: This line needs to be fixed
-      broker.publish();
+      // broker.publish();
     }, config.telemetryInterval );
   
   console.log("Listening for WebSocket connections on: " + wsPort);
