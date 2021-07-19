@@ -13,6 +13,7 @@
   "license": "Loop Inc. Confidential",
   "dependencies": {
     "aedes": "0.46.0",
+    "cors": "2.8.5",
     "express": "4.17.1",
     "morgan": "1.9.1",
     "mosca": "2.8.3",

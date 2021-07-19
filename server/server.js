@@ -2,6 +2,7 @@ const
   { config, utils }  = require( "./utils" ),
   express = require( "express" ),
   app = express(),
+  cors = require( "cors" ),
   aedes = require( "aedes" )(),
   logger = require( "morgan" ),
   httpPort = 8080,
@@ -13,6 +14,7 @@ const
 
 ws.createServer({ server: app }, aedes.handle)
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
