@@ -1,5 +1,5 @@
 const
-  { config, utils, simplePublish }  = require( "./utils" ),
+  { config, utils }  = require( "./utils" ),
   express = require( "express" ),
   app = express(),
   aedes = require( "aedes" )(),
@@ -26,7 +26,8 @@ getDevices().then(devices => {
     devices.forEach( ( { key } ) => {
       const topic = key + config.statusTopic
       const payload = 'on'
-      simplePublish(aedes, topic, payload)
+      console.info(`Publishing to topic "${topic}": "${payload}"`)
+      aedes.publish({ topic, payload })
     } )
 
     setInterval( async() => {
@@ -43,7 +44,7 @@ getDevices().then(devices => {
         }
         else {
           const topic = device.key + config.telemetryTopic
-          simplePublish(aedes, topic, telemetry)
+          aedes.publish({ topic, payload: telemetry })
         }
       }))
     }, config.telemetryInterval );

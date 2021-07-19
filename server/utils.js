@@ -32,17 +32,7 @@ const utils = {
   },
   randomRange: randomRange
 }
-
-function simplePublish(broker, topic, payload) {
-  console.info(`Publishing to topic "${topic}": ${payload}`)
-  broker.publish({
-    topic,
-    payload: 'on',
-  })
-}
-
 module.exports = {
   config,
   utils,
-  simplePublish
 }
