@@ -14,4 +14,4 @@ You will write a simple client-side application **of your choice that will:** ( 
 - Return a list of devices provided by the API described above
 - Subscribe to and display data emitted from socket server described above
 
-Be mindful, some things in the bootstrap are intentionally broken. Imagine a JR developer was given this and you have to fix & complete this'POC'.
+Be mindful, some things in the bootstrap are intentionally broken. Imagine a JR developer was given this and you have to fix & complete this.
